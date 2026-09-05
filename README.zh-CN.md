@@ -62,6 +62,38 @@
 - Letter/Legal 等其他纸张尺寸
 - 双面打印
 
+## 依赖环境
+
+正常情况下，不需要额外安装下面这些工具：
+
+- 不需要 Homebrew
+- 不需要 Ghostscript
+- 不需要 Node.js
+- 不需要 Python
+- 不需要手动安装 Xcode
+
+需要具备的是：
+
+- Apple Silicon Mac（M1/M2/M3/M4 等 arm64 机型）
+- macOS 自带的 CUPS 打印系统
+- 可以使用 `sudo` 的管理员账号
+- USB 连接并已开机的 HP LaserJet M1005 MFP
+
+项目已经附带 Apple Silicon 预编译程序：
+
+```text
+bin/darwin-arm64/m1005-raster2pbm
+bin/darwin-arm64/foo2xqx
+```
+
+安装脚本会先检查系统里有没有 `clang`。如果有，会优先尝试从源码编译；如果没有，Apple Silicon Mac 会直接使用上面这两个内置二进制文件。
+
+因此，对普通用户来说，通常只需要解压项目、连接打印机，然后运行：
+
+```sh
+./install.sh
+```
+
 ## 安装
 
 ### 1. 下载项目
